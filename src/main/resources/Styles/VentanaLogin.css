@@ -1,0 +1,30 @@
+.root {
+    -fx-background-color: #E8EAF6;
+}
+
+.text-title {
+    -fx-fill: #303F9F;
+}
+
+.label-footer {
+    -fx-text-fill: #5C6BC0;
+    -fx-font-weight: bold;
+}
+
+.input-field {
+    -fx-padding: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #C5CAE9;
+    -fx-background-color: #FFFFFF;
+}
+
+.button {
+    -fx-background-color: #303F9F;
+    -fx-text-fill: white;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px 20px;
+}
+
+.button:hover {
+    -fx-background-color: #5C6BC0;
+}

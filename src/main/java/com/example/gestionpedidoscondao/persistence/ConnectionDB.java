@@ -14,7 +14,7 @@ public class ConnectionDB {
     public static Connection getConnection() {
         try {
             Properties propiedades = new Properties();
-            InputStream archivoPropiedades = new FileInputStream("C:/dev/WorkSpace/Proyectos IntelliJ/GestionPedidosConDAO/src/main/resources/DB.properties");
+            InputStream archivoPropiedades = new FileInputStream("src/main/resources/DB.properties");
             propiedades.load(archivoPropiedades);
 
             String url = propiedades.getProperty("url");
