@@ -31,8 +31,6 @@ public class VentanaItemPedido extends Application implements Initializable {
     @javafx.fxml.FXML
     private TableView<ItemPedido> tbItemsPedidos;
     @javafx.fxml.FXML
-    private TableColumn cCodPedido;
-    @javafx.fxml.FXML
     private TableColumn cCantidad;
     @javafx.fxml.FXML
     private Button btnVolver;

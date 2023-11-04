@@ -14,8 +14,7 @@
 
 <BorderPane styleClass="border-pane" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpedidoscondao.ui.VentanaLogin">
   <center>
-    <VBox alignment="CENTER" maxHeight="300.0" maxWidth="300.0" spacing="20.0"
-          style="-fx-border-style: solid; -fx-border-radius: 15px;">
+    <VBox alignment="CENTER" maxHeight="300.0" maxWidth="300.0" spacing="20.0" style="-fx-border-style: solid; -fx-border-radius: 15px;">
       <children>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
           <children>
@@ -30,20 +29,26 @@
           <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario">
               <HBox.margin>
-                <Insets right="26.0" />
+                <Insets left="20.0" />
               </HBox.margin>
             </Text>
-            <TextField fx:id="tfUser" prefHeight="0.0" prefWidth="149.0" styleClass="input-field" />
+            <TextField fx:id="tfUser" prefHeight="0.0" prefWidth="149.0" styleClass="input-field">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin></TextField>
           </children>
         </HBox>
         <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="282.0">
           <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña">
               <HBox.margin>
-                <Insets right="8.0" />
+                <Insets left="20.0" />
               </HBox.margin>
             </Text>
-            <PasswordField fx:id="tfPass" styleClass="input-field" />
+            <PasswordField fx:id="tfPass" styleClass="input-field">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin></PasswordField>
           </children>
           <VBox.margin>
             <Insets />

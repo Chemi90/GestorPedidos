@@ -28,8 +28,6 @@ import java.util.ResourceBundle;
 public class VentanaPrincipal extends Application implements Initializable {
 
     @javafx.fxml.FXML
-    private Label lbLogo;
-    @javafx.fxml.FXML
     private TableView tbPedidos;
     @javafx.fxml.FXML
     private TableColumn cCodigo;
@@ -118,7 +116,7 @@ public class VentanaPrincipal extends Application implements Initializable {
     public void onAñadirClick(ActionEvent actionEvent) {
     }
     public void cerrarVentana() {
-        Stage stage = (Stage) lbLogo.getScene().getWindow();
+        Stage stage = (Stage) lbNombreUsuario.getScene().getWindow();
         stage.close();
     }
     @javafx.fxml.FXML

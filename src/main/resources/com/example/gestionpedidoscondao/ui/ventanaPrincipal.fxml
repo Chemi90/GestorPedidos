@@ -2,6 +2,7 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -10,17 +11,37 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="529.0" prefWidth="669.0" styleClass="main-window" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpedidoscondao.ui.VentanaPrincipal">
+<BorderPane prefHeight="428.0" prefWidth="761.0" styleClass="main-window" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpedidoscondao.ui.VentanaPrincipal">
     <center>
         <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="907.0">
             <top>
                 <VBox prefHeight="120.0" prefWidth="600.0" styleClass="main-logo">
                     <children>
-                        <Label fx:id="lbLogo" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #fff;" text="LOGO EMPRESA" />
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <viewport>
+                              <Rectangle2D height="100.0" minY="100.0" />
+                           </viewport>
+                           <image>
+                              <Image url="@../../../../images/Logo.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Alimenta tu día con un toque de magia y comodidad—nuestra variedad te espera para que sigas adelante con energía y una sonrisa. ¡Ven, descubre y disfruta lo que tu empresa de vending tiene para ti!&quot;" wrappingWidth="715.337890625">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
                     </children>
                 </VBox>
             </top>

@@ -13,7 +13,8 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         this.stage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("ui/ventanaLogin.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        Scene scene = new Scene(fxmlLoader.load(), 907,497);
+        stage.setResizable(false);
         stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();
@@ -21,7 +22,8 @@ public class App extends Application {
 
     public static void changeScene(String fxml, String title) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("ui/"+fxml));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+        Scene scene = new Scene(fxmlLoader.load(), 907,497);
+        stage.setResizable(false);
         stage.setTitle(title);
         stage.setScene(scene);
         stage.show();

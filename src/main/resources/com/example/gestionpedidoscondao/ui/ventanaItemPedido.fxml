@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="586.0" prefWidth="906.0" styleClass="item-window" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpedidoscondao.ui.VentanaItemPedido">
+<BorderPane prefHeight="495.0" prefWidth="910.0" styleClass="item-window" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionpedidoscondao.ui.VentanaItemPedido">
     <center>
         <VBox prefHeight="200.0" prefWidth="100.0" styleClass="content-box" BorderPane.alignment="CENTER">
             <children>
-                <TableView fx:id="tbItemsPedidos" prefHeight="551.0" prefWidth="886.0" styleClass="item-table">
+                <TableView fx:id="tbItemsPedidos" prefHeight="413.0" prefWidth="890.0" styleClass="item-table">
                     <columns>
                         <TableColumn fx:id="cnomProducto" prefWidth="75.0" text="Nombre del Producto" />
                         <TableColumn fx:id="cCantidad" prefWidth="75.0" text="Cantidad" />
