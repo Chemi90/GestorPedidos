@@ -16,7 +16,17 @@ public class ItemPedidoDAOImp implements ItemPedidoDAO{
         List<ItemPedido> items = new ArrayList<>();
 
         // Cambia la consulta para que busque por el 'id' del pedido
-        String query = "SELECT i.id_items, i.codPedido, i.cantidad, i.producto FROM ItemsPedidos i JOIN Pedidos p ON i.codPedido = p.código WHERE i.codPedido = ?";
+        String query = "SELECT \n" +
+                "    ip.codPedido,\n" +
+                "    ip.cantidad,\n" +
+                "    p.nombre,\n" +
+                "    (ip.cantidad * p.precio) AS precio_total\n" +
+                "FROM \n" +
+                "    ItemsPedidos AS ip\n" +
+                "JOIN \n" +
+                "    Productos AS p ON ip.producto = p.id_productos\n" +
+                "WHERE \n" +
+                "    ip.codPedido = ?;\n";
         try (Connection connection = ConnectionDB.getConnection();
              PreparedStatement stmt = connection.prepareStatement(query)) {
 
@@ -24,16 +34,16 @@ public class ItemPedidoDAOImp implements ItemPedidoDAO{
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                int id = rs.getInt("id_items");
                 String pedido = rs.getString("CodPedido");
                 int cantidad = rs.getInt("cantidad");
-                int productoId = rs.getInt("producto");
+                String productoNombre = rs.getString("nombre");
+                Double precio = rs.getDouble("precio_total");
 
                 ItemPedido item = new ItemPedido();
-                item.setId(id);
-                item.setPedidoId(pedido);
+                item.setCodPedido(pedido);
                 item.setCantidad(cantidad);
-                item.setProductoId(productoId);
+                item.setProductoNombre(productoNombre);
+                item.setPrecio(precio);
 
                 items.add(item);
             }

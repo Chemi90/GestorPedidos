@@ -35,11 +35,11 @@ public class VentanaItemPedido extends Application implements Initializable {
     private TableColumn cCantidad;
     @javafx.fxml.FXML
     private Button btnVolver;
-    @javafx.fxml.FXML
-    private TableColumn cId_item;
-    @javafx.fxml.FXML
-    private TableColumn cidProducto;
     private ItemPedidoDAO itemPedidoDAO = new ItemPedidoDAOImp();
+    @javafx.fxml.FXML
+    private TableColumn cnomProducto;
+    @javafx.fxml.FXML
+    private TableColumn cprecioProducto;
 
     public static void main(String[] args) {
         launch(args);
@@ -60,9 +60,9 @@ public class VentanaItemPedido extends Application implements Initializable {
 
         List<ItemPedido> items = itemPedidoDAO.findItemsByPedidoCodigo(Session.getPedido());
 
-        cId_item.setCellValueFactory(new PropertyValueFactory<ItemPedido, Integer>("id"));
-        cCodPedido.setCellValueFactory(new PropertyValueFactory<ItemPedido, Integer>("pedidoId"));
-        cidProducto.setCellValueFactory(new PropertyValueFactory<ItemPedido, Integer>("productoId"));
+        cCodPedido.setCellValueFactory(new PropertyValueFactory<ItemPedido, Integer>("codPedido"));
+        cprecioProducto.setCellValueFactory(new PropertyValueFactory<ItemPedido, Integer>("precio"));
+        cnomProducto.setCellValueFactory(new PropertyValueFactory<ItemPedido, Integer>("productoNombre"));
         cCantidad.setCellValueFactory(new PropertyValueFactory<ItemPedido, Integer>("cantidad"));
 
         tbItemsPedidos.setItems(FXCollections.observableArrayList(items));
