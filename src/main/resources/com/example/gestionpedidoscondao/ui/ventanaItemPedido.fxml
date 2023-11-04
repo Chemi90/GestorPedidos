@@ -15,7 +15,6 @@
             <children>
                 <TableView fx:id="tbItemsPedidos" prefHeight="551.0" prefWidth="886.0" styleClass="item-table">
                     <columns>
-                        <TableColumn fx:id="cCodPedido" prefWidth="75.0" text="Codigo del Pedido" />
                         <TableColumn fx:id="cnomProducto" prefWidth="75.0" text="Nombre del Producto" />
                         <TableColumn fx:id="cCantidad" prefWidth="75.0" text="Cantidad" />
                         <TableColumn fx:id="cprecioProducto" prefWidth="75.0" text="Precio de los productos" />

@@ -1,5 +1,6 @@
 package com.example.gestionpedidoscondao.ui;
 
+import com.example.gestionpedidoscondao.App;
 import com.example.gestionpedidoscondao.Session;
 import com.example.gestionpedidoscondao.model.Pedido;
 import com.example.gestionpedidoscondao.model.Producto;
@@ -78,13 +79,10 @@ public class VentanaPrincipal extends Application implements Initializable {
     public void onViewItemsClick(Event event) throws IOException {
         Pedido pedidoSeleccionado = (Pedido) tbPedidos.getSelectionModel().getSelectedItem();
         if (pedidoSeleccionado != null) {
-            // Cierra la ventana actual
-            Stage stageActual = (Stage) lbNombreUsuario.getScene().getWindow();
-            stageActual.close();
 
             String CodPedido = pedidoSeleccionado.getCódigo();
             Session.setPedido(CodPedido);
-            mostrarVentanaItemPedido(pedidoSeleccionado);
+            App.changeScene("ventanaItemPedido.fxml", "Items del Pedido " + CodPedido);
         } else {
             // Mostrar mensaje de error
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -125,19 +123,10 @@ public class VentanaPrincipal extends Application implements Initializable {
     }
     @javafx.fxml.FXML
     public void onLogoutClick(ActionEvent actionEvent) {
-        // Limpia los datos y cierra la ventana principal
-        cerrarVentana();
-        // Volver a la pantalla de inicio de sesión
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ventanaLogin.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root);
-            Stage loginStage = new Stage();
-            loginStage.setTitle("Inicio de Sesión");
-            loginStage.setScene(scene);
-            loginStage.show();
+            App.changeScene("ventanaLogin.fxml", "Login");
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 

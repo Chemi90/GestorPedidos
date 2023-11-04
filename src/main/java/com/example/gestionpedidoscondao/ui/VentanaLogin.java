@@ -1,5 +1,6 @@
 package com.example.gestionpedidoscondao.ui;
 
+import com.example.gestionpedidoscondao.App;
 import com.example.gestionpedidoscondao.Session;
 import com.example.gestionpedidoscondao.model.Usuario;
 import com.example.gestionpedidoscondao.persistence.UsuarioDAO;
@@ -47,18 +48,7 @@ public class VentanaLogin {
             Session.setUsuarioLogeado(user.getNombre());
             Session.setUsuarioId(user.getId());
 
-            // Cierra la ventana actual
-            Stage stageActual = (Stage) tfUser.getScene().getWindow();
-            stageActual.close();
-
-            // Abre VentanaPrincipal
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ventanaPrincipal.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.setTitle("Ventana Principal");
-            stage.show();
-
+            App.changeScene("ventanaPrincipal.fxml", "Gestor de Pedidos");
         } else {
             // Mostrar mensaje de error
             Alert alert = new Alert(Alert.AlertType.ERROR);

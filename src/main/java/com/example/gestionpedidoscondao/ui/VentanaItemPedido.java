@@ -1,5 +1,6 @@
 package com.example.gestionpedidoscondao.ui;
 
+import com.example.gestionpedidoscondao.App;
 import com.example.gestionpedidoscondao.Session;
 import com.example.gestionpedidoscondao.model.ItemPedido;
 import com.example.gestionpedidoscondao.model.Pedido;
@@ -60,7 +61,6 @@ public class VentanaItemPedido extends Application implements Initializable {
 
         List<ItemPedido> items = itemPedidoDAO.findItemsByPedidoCodigo(Session.getPedido());
 
-        cCodPedido.setCellValueFactory(new PropertyValueFactory<ItemPedido, Integer>("codPedido"));
         cprecioProducto.setCellValueFactory(new PropertyValueFactory<ItemPedido, Integer>("precio"));
         cnomProducto.setCellValueFactory(new PropertyValueFactory<ItemPedido, Integer>("productoNombre"));
         cCantidad.setCellValueFactory(new PropertyValueFactory<ItemPedido, Integer>("cantidad"));
@@ -71,17 +71,7 @@ public class VentanaItemPedido extends Application implements Initializable {
 
     @javafx.fxml.FXML
     public void volver(ActionEvent actionEvent) throws IOException {
-        // Cierra la ventana actual
-        Stage stageActual = (Stage) btnVolver.getScene().getWindow();
-        stageActual.close();
-
-        // Abre VentanaPrincipal
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ventanaPrincipal.fxml"));
-        Parent root = loader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Ventana Principal");
-        stage.show();
+        App.changeScene("ventanaPrincipal.fxml", "Gestor de Pedidos");
     }
 
     @Override
